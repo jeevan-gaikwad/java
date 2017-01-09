@@ -19,6 +19,7 @@ public class SessionTest {
 		sessions.add(lunchTime);
 		Track track1=testConferene.getTracks().get(0);
 		track1.setSessions(sessions);
+		track1.setSessions(sessions);
 		assertEquals(morningSession,track1.getMorningSession());
 	}
 
