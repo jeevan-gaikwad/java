@@ -10,7 +10,7 @@ public class Track {
 	private String name;
 	private List<Session> sessions;
 	private NetworkingEvent networkingEvent;
-	
+	private boolean isFull;
 	private Session getSession(Session.Type type) throws SessionNotFoundException{
 		Iterator<Session> sessionIterator = sessions.iterator();
 		while(sessionIterator.hasNext()){
@@ -51,4 +51,11 @@ public class Track {
 	public Session getLunchTime() throws SessionNotFoundException{
 		return getSession(Session.Type.LUNCHTIME);
 	}
+	public boolean isFull() {
+		return isFull;
+	}
+	public void setFull(boolean isFull) {
+		this.isFull = isFull;
+	}
+	
 }

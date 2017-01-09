@@ -3,7 +3,7 @@ package com.thoughtworks.conftrackmgmnt.beans;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
-import java.util.List;s
+import java.util.List;
 import org.junit.Test;
 
 import com.thoughtworks.conftrackmgmnt.exception.SessionNotFoundException;
@@ -18,7 +18,7 @@ public class SessionTest {
 		sessions.add(morningSession);
 		sessions.add(lunchTime);
 		Track track1=testConferene.getTracks().get(0);
-		track1.setSessions(sessions);s		
+		track1.setSessions(sessions);
 		assertEquals(morningSession,track1.getMorningSession());
 	}
 
