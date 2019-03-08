@@ -2,6 +2,7 @@ package org.jeevan.usermgmt.controller;
 
 import java.util.List;
 import org.jeevan.usermgmt.dto.User;
+import org.jeevan.usermgmt.exception.UserNotFoundException;
 import org.jeevan.usermgmt.service.UserMgmtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,7 +32,7 @@ public class UserMgmntController {
     
     @RequestMapping(value = "/usermgmt/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public  ResponseEntity<User> getUserDetails(@PathVariable("id") long userId) {
+    public  ResponseEntity<User> getUserDetails(@PathVariable("id") long userId) throws UserNotFoundException {
         
         User user = userMgmtService.getUserDetails(userId);
         

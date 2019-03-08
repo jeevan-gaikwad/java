@@ -3,16 +3,21 @@ package org.jeevan.usermgmt.service;
 import java.util.ArrayList;
 import java.util.List;
 import org.jeevan.usermgmt.dto.User;
+import org.jeevan.usermgmt.exception.UserNotFoundException;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserMgmtService {
     
-    public User getUserDetails(long userId) {
+    public User getUserDetails(long userId) throws UserNotFoundException {
         User user = new User();
         user.setAge(22);
         user.setId(01);
         user.setName("Jeevan");
+        
+        if(userId == 2) {
+            throw new UserNotFoundException(userId);
+        }
         return user;
     }
     
